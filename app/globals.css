@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+:root {
+  /* Brand palette — see docs/design/style-guide.md §2 */
+  --track-black: #0a0a08;
+  --ink: #050504;
+  --volt: #d7ff3f;
+  --volt-deep: #b8de2e;
+  --chalk: #f5f4ec;
+  --graphite: #1c1e17;
+  --smoke: #8b8d82;
+  --glass-fill: rgba(245, 244, 236, 0.06);
+  --hairline: rgba(245, 244, 236, 0.14);
+  --warning: #ffb020;
+  --error: #ff5a44;
+
+  /* Semantic aliases — components reference these, not the raw palette */
+  --background: var(--track-black);
+  --foreground: var(--chalk);
+  --surface: var(--graphite);
+  --surface-deep: var(--ink);
+  --accent: var(--volt);
+  --accent-hover: var(--volt-deep);
+  --muted: var(--smoke);
+  --border: var(--hairline);
+  --success: var(--volt);
+}
+
+@theme inline {
+  --font-display: var(--font-anton);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-surface-deep: var(--surface-deep);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-glass-fill: var(--glass-fill);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-error: var(--error);
+
+  /* Stepped radius scale — radius-hero is used once, on the Hero only */
+  --radius-xs: 6px;
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 28px;
+  --radius-hero: 40px;
+
+  /* The system's one shadow: a Volt hover glow, never a grey drop-shadow */
+  --shadow-glow: 0 0 24px rgba(215, 255, 63, 0.25);
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+}
+
+/* Display type (Anton, uppercase) is reserved for the hero headline,
+   section headings, and anything explicitly marked .font-display —
+   NOT every heading level. Heading M (h3: trainer/class names, card
+   titles) stays Geist Sans, sentence case, per style-guide.md §3. */
+h1,
+h2,
+.font-display {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

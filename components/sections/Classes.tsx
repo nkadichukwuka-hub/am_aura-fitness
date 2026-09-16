@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Badge } from "@/components/ui/Badge";
 import { classes } from "@/lib/content";
 
@@ -21,16 +22,27 @@ export function Classes() {
             return (
               <li
                 key={item.name}
-                className="rounded-md border border-border bg-surface p-6 transition-colors hover:border-accent/40"
+                className="rounded-md overflow-hidden border border-border bg-surface transition-colors hover:border-accent/40"
               >
-                <span className="flex h-11 w-11 items-center justify-center rounded-full border border-border">
-                  <Icon className="h-5 w-5 text-accent" aria-hidden="true" strokeWidth={1.5} />
-                </span>
-                <h3 className="mt-4 text-lg font-semibold">{item.name}</h3>
-                <p className="mt-2 text-sm text-muted leading-relaxed">{item.description}</p>
-                <div className="mt-5 flex gap-2">
-                  <Badge>{item.duration}</Badge>
-                  <Badge>{item.difficulty}</Badge>
+                <div className="relative aspect-[4/3] w-full">
+                  <Image
+                    src={item.photoSrc}
+                    alt={item.photoAlt}
+                    fill
+                    sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                    className="object-cover grayscale"
+                  />
+                  <span className="absolute left-4 top-4 flex h-11 w-11 items-center justify-center rounded-full border border-border bg-surface-deep/80 backdrop-blur">
+                    <Icon className="h-5 w-5 text-accent" aria-hidden="true" strokeWidth={1.5} />
+                  </span>
+                </div>
+                <div className="p-6">
+                  <h3 className="text-lg font-semibold">{item.name}</h3>
+                  <p className="mt-2 text-sm text-muted leading-relaxed">{item.description}</p>
+                  <div className="mt-5 flex gap-2">
+                    <Badge>{item.duration}</Badge>
+                    <Badge>{item.difficulty}</Badge>
+                  </div>
                 </div>
               </li>
             );

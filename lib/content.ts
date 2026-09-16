@@ -7,6 +7,8 @@ export interface ClassItem {
   description: string;
   duration: string;
   difficulty: "Beginner" | "Intermediate" | "Advanced";
+  photoSrc: string;
+  photoAlt: string;
 }
 
 export const classes: ClassItem[] = [
@@ -16,6 +18,8 @@ export const classes: ClassItem[] = [
     description: "Short, hard intervals that build conditioning fast.",
     duration: "30 min",
     difficulty: "Advanced",
+    photoSrc: "/images/class-hiit.webp",
+    photoAlt: "Two people doing an intense battle ropes workout in the studio",
   },
   {
     icon: Wind,
@@ -23,6 +27,8 @@ export const classes: ClassItem[] = [
     description: "Mobility and breath work to recover between hard sessions.",
     duration: "50 min",
     difficulty: "Beginner",
+    photoSrc: "/images/class-yoga.webp",
+    photoAlt: "A group holding a yoga pose during an indoor class",
   },
   {
     icon: Dumbbell,
@@ -30,6 +36,8 @@ export const classes: ClassItem[] = [
     description: "Barbell fundamentals — squat, press, pull, hinge.",
     duration: "60 min",
     difficulty: "Intermediate",
+    photoSrc: "/images/class-strength.webp",
+    photoAlt: "A trainer coaching a member through a barbell front squat",
   },
   {
     icon: Bike,
@@ -37,6 +45,8 @@ export const classes: ClassItem[] = [
     description: "Music-driven rides that build endurance on the bike.",
     duration: "45 min",
     difficulty: "Intermediate",
+    photoSrc: "/images/class-cycling.webp",
+    photoAlt: "A rider focused mid-effort on a stationary bike",
   },
   {
     icon: Swords,
@@ -44,6 +54,8 @@ export const classes: ClassItem[] = [
     description: "Pad work and technique drills — no sparring required.",
     duration: "45 min",
     difficulty: "Advanced",
+    photoSrc: "/images/class-boxing.webp",
+    photoAlt: "A coach holding pads for a boxer's punch combination",
   },
   {
     icon: Sparkles,
@@ -51,6 +63,8 @@ export const classes: ClassItem[] = [
     description: "Core control and posture work on the mat.",
     duration: "40 min",
     difficulty: "Beginner",
+    photoSrc: "/images/class-pilates.webp",
+    photoAlt: "Members on mats during a Pilates class",
   },
 ];
 

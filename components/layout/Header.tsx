@@ -5,6 +5,7 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { navLinks } from "@/lib/content";
+import { scrollToHash } from "@/lib/scroll";
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -24,6 +25,7 @@ export function Header() {
             <Link
               key={link.href}
               href={link.href}
+              onClick={(e) => scrollToHash(e, link.href)}
               className="text-sm text-foreground hover:text-accent transition-colors"
             >
               {link.label}
@@ -32,7 +34,11 @@ export function Header() {
         </nav>
 
         <div className="hidden lg:flex items-center gap-6">
-          <Link href="#contact" className="text-sm text-foreground hover:text-accent transition-colors">
+          <Link
+            href="#contact"
+            onClick={(e) => scrollToHash(e, "#contact")}
+            className="text-sm text-foreground hover:text-accent transition-colors"
+          >
             Log in
           </Link>
           <Button href="#contact" size="md">
@@ -62,7 +68,10 @@ export function Header() {
             <Link
               key={link.href}
               href={link.href}
-              onClick={() => setOpen(false)}
+              onClick={(e) => {
+                scrollToHash(e, link.href);
+                setOpen(false);
+              }}
               className="text-base text-foreground hover:text-accent transition-colors"
             >
               {link.label}

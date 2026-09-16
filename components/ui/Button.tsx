@@ -1,5 +1,8 @@
+"use client";
+
 import Link from "next/link";
 import type { ReactNode } from "react";
+import { scrollToHash } from "@/lib/scroll";
 
 type ButtonVariant = "primary" | "secondary" | "ghost";
 type ButtonSize = "md" | "lg";
@@ -47,7 +50,12 @@ export function Button({
 
   if (href) {
     return (
-      <Link href={href} className={classes} aria-disabled={disabled}>
+      <Link
+        href={href}
+        className={classes}
+        aria-disabled={disabled}
+        onClick={(e) => scrollToHash(e, href)}
+      >
         {children}
       </Link>
     );

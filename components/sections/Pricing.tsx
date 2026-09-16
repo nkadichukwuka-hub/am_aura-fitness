@@ -1,8 +1,11 @@
+"use client";
+
 import Link from "next/link";
 import { Check, X } from "lucide-react";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { pricingTiers } from "@/lib/content";
+import { scrollToHash } from "@/lib/scroll";
 
 export function Pricing() {
   return (
@@ -68,6 +71,7 @@ export function Pricing() {
               {plan.highlighted ? (
                 <Link
                   href="#contact"
+                  onClick={(e) => scrollToHash(e, "#contact")}
                   className="mt-8 flex w-full items-center justify-center rounded-full bg-surface-deep px-6 py-3 text-sm font-semibold uppercase tracking-wide text-accent transition-opacity hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-surface-deep"
                 >
                   Get Started

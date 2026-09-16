@@ -103,6 +103,9 @@ export const aboutImage = {
   alt: "Close-up of stacked weight plates on a rack in the studio",
 };
 
+export const chatWebhookUrl =
+  "https://nkadi-goshen.app.n8n.cloud/webhook/0945aced-b01d-4cd7-a439-6ca0efbc9d35/chat";
+
 export interface PricingFeature {
   label: string;
   included: boolean;

@@ -93,3 +93,51 @@ h2,
     scroll-behavior: auto !important;
   }
 }
+
+/* n8n chat widget — themed to match the brand palette above.
+   !important because @n8n/chat/style.css is imported inside Chatbot.tsx
+   and lands after this file in the bundle, so its own :root block would
+   otherwise win the cascade on these custom properties. */
+:root {
+  --chat--color--primary: var(--volt) !important;
+  --chat--color--primary-shade-50: var(--volt-deep) !important;
+  --chat--color--primary--shade-100: var(--volt-deep) !important;
+  --chat--color--secondary: var(--volt) !important;
+  --chat--color-secondary-shade-50: var(--volt-deep) !important;
+  --chat--color-white: var(--chalk) !important;
+  --chat--color-light: var(--graphite) !important;
+  --chat--color-light-shade-50: var(--track-black) !important;
+  --chat--color-light-shade-100: var(--hairline) !important;
+  --chat--color-medium: var(--smoke) !important;
+  --chat--color-dark: var(--track-black) !important;
+  --chat--color-disabled: var(--smoke) !important;
+  --chat--color-typing: var(--chalk) !important;
+
+  --chat--font-family: var(--font-sans) !important;
+  --chat--border-radius: 10px !important;
+
+  --chat--header--background: var(--ink) !important;
+  --chat--header--color: var(--chalk) !important;
+
+  --chat--message--bot--background: var(--graphite) !important;
+  --chat--message--bot--color: var(--chalk) !important;
+  --chat--message--user--background: var(--volt) !important;
+  --chat--message--user--color: var(--ink) !important;
+
+  --chat--toggle--background: var(--volt) !important;
+  --chat--toggle--hover--background: var(--volt-deep) !important;
+  --chat--toggle--active--background: var(--volt-deep) !important;
+  --chat--toggle--color: var(--ink) !important;
+
+  --chat--body--background: var(--track-black) !important;
+  --chat--footer--background: var(--ink) !important;
+  --chat--footer--color: var(--smoke) !important;
+
+  --chat--input--background: var(--graphite) !important;
+  --chat--input--text-color: var(--chalk) !important;
+
+  --chat--input--send--button--background: var(--volt) !important;
+  --chat--input--send--button--color: var(--ink) !important;
+  --chat--input--send--button--background-hover: var(--volt-deep) !important;
+  --chat--input--send--button--color-hover: var(--ink) !important;
+}

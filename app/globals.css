@@ -72,6 +72,20 @@ h2,
   text-transform: uppercase;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+/* Sticky header (see Header.tsx) covers the top of the viewport, so anchor
+   targets need scroll-margin-top or their heading lands underneath it. */
+#about,
+#classes,
+#trainers,
+#pricing,
+#contact {
+  scroll-margin-top: 96px;
+}
+
 @keyframes fade-up {
   from {
     opacity: 0;

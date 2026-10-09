@@ -3,12 +3,11 @@
 import { useEffect } from "react";
 import "@n8n/chat/style.css";
 import { createChat } from "@n8n/chat";
-import { chatWebhookUrl } from "@/lib/content";
 
 export function Chatbot() {
   useEffect(() => {
     createChat({
-      webhookUrl: chatWebhookUrl,
+      webhookUrl: "/api/chat", // answered by app/api/chat/route.ts (Gemini)
       mode: "window",
       showWelcomeScreen: false,
       loadPreviousSession: false,
